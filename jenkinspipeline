@@ -26,13 +26,13 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        sh "scp -i ubuntu1.pem **/target/*.war ubuntu@ec2-18-219-36-123.us-east-2.compute.amazonaws.com:/var/lib/tomcat7/webapps"
+                        sh "scp -i ubuntu1.pem **/target/*.war ubuntu@ec2-18-219-36-123.us-east-2.compute.amazonaws.com:~/ajay/apache-tomcat-7.0.86/webapps"
                     }
                 }
 
                 stage ("Deploy to Production"){
                     steps {
-                        sh "scp -i ubuntu1.pem **/target/*.war ubuntu@ec2-18-219-36-123.us-east-2.compute.amazonaws.com:/var/lib/tomcat7/webapps"
+                        sh "scp -i ubuntu1.pem **/target/*.war ubuntu@ec2-18-219-36-123.us-east-2.compute.amazonaws.com:/~/ajay/apache-tomcat-7.0.86/webapps"
                     }
                 }
             }
